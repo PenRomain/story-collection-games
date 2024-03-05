@@ -75,10 +75,11 @@ export const H1 = styled.h1<{ $withBorder?: boolean }>`
   }
 `
 
-export const H2 = styled.h2`
+export const H2 = styled.h2<{ $withShadow?: boolean }>`
   ${montserrat.style}
   font-size: 32px;
   line-height: 30px;
+  ${({ $withShadow }) => $withShadow && shadow}
 
   @media ${up("mobile")} {
     font-size: 53px;
@@ -92,9 +93,10 @@ export const H3 = styled.h3`
   line-height: 16.94px;
 `
 
-export const H4 = styled.h4`
+export const H4 = styled.h4<{ $withShadow?: boolean }>`
   ${manrope.style}
   ${letterSpacing}
+  ${({ $withShadow }) => $withShadow && shadow}
   font-size: 17px;
   line-height: 25.5px;
 `

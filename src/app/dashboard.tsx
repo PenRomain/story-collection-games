@@ -10,6 +10,7 @@ import { MainWrap, Section } from "@/lib/widgets/layout"
 import Face from "@/lib/widgets/face"
 import Image from "next/image"
 import Board from "@/lib/widgets/board"
+import { Bottom } from "@/lib/widgets/bottom"
 
 const GlobalStyles = createGlobalStyle`
     body, h1, h2, h3, h4, h5, h6, p, span {
@@ -62,9 +63,7 @@ export const Dashboard = memo(function Dashboard() {
           alt="background footer"
         />
         <Section>
-          <Face />
-          <Face />
-          <Face />
+          <Bottom />
         </Section>
       </MainWrap>
     </>
