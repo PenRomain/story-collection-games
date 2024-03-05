@@ -8,7 +8,7 @@ import { styled } from "styled-components"
 import series from "@/lib/ui/assets/projects/series.png"
 import alters from "@/lib/ui/assets/projects/alters.png"
 import amazons from "@/lib/ui/assets/projects/amazons.png"
-import hot from "@/lib/ui/assets/projects/hot.png"
+// import hot from "@/lib/ui/assets/projects/hot.png"
 import outNow from "@/lib/ui/assets/projects/out-now.png"
 import game1 from "@/lib/ui/assets/games/1.png"
 import game2 from "@/lib/ui/assets/games/2.png"
@@ -78,12 +78,12 @@ const CarouselList = styled.div`
     }
   }
 `
-const Carousel = styled("div")`
-  display: flex;
-  width: 100%;
-  height: 100%;
-  align-items: center;
-`
+// const Carousel = styled("div")`
+//   display: flex;
+//   width: 100%;
+//   height: 100%;
+//   align-items: center;
+// `
 const CarouselHeadLine = styled(Box)`
   align-items: flex-start;
   gap: 20px;
