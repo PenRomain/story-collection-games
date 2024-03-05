@@ -17,11 +17,27 @@ import game4 from "@/lib/ui/assets/games/4.png"
 import game5 from "@/lib/ui/assets/games/5.png"
 
 const games = [game1, game2, game3, game4, game5]
+const LeftButton = styled(Button)`
+  position: absolute;
+  left: 0;
+
+  @media ${up("mobile")} {
+    // display: none;
+  }
+`
+const RightButton = styled(Button)`
+  position: absolute;
+  right: 0;
+
+  @media ${up("mobile")} {
+    // display: none;
+  }
+`
 const CarouselList = styled.div`
   display: flex;
   list-style: none;
   position: relative;
-  width: 100%;
+  width: 100dvw;
   height: 300px;
   justify-content: center;
   perspective: 300px;
@@ -73,6 +89,7 @@ const CarouselList = styled.div`
   }
 
   @media ${up("mobile")} {
+    width: 100%;
     & > .carousel__item {
       width: max-content;
     }
@@ -145,7 +162,14 @@ const Wrap = styled(Box)`
 
 export const Board = memo(function Board() {
   const [activeIndex, setActiveIndex] = useState(-2)
-
+  const directionHandler = (direction: "left" | "right") => {
+    direction === "left" &&
+      activeIndex !== -2 &&
+      setActiveIndex((prev) => prev - 1)
+    direction === "right" &&
+      activeIndex !== 2 &&
+      setActiveIndex((prev) => prev + 1)
+  }
   const updatePosition = (newActiveIndex: number) => {
     setActiveIndex(newActiveIndex)
   }
@@ -180,12 +204,14 @@ export const Board = memo(function Board() {
         </Body>
         <ProjectWrap fullWidth>
           <Image
+            quality={100}
             src={series.src}
             width={series.width}
             height={series.height}
             alt="series"
           />
           <Image
+            quality={100}
             style={{
               position: "absolute",
               transform: "scale(0.4) translateX(-100%) translateY(-100%)",
@@ -212,6 +238,7 @@ export const Board = memo(function Board() {
 
         <ProjectWrap fullWidth>
           <Image
+            quality={100}
             src={alters.src}
             width={alters.width}
             height={alters.height}
@@ -239,6 +266,7 @@ export const Board = memo(function Board() {
 
         <ProjectWrap fullWidth>
           <Image
+            quality={100}
             src={amazons.src}
             width={amazons.width}
             height={amazons.height}
@@ -297,6 +325,12 @@ export const Board = memo(function Board() {
                 />
               </li>
             ))}
+            <LeftButton onClick={() => directionHandler("left")}>
+              left
+            </LeftButton>
+            <RightButton onClick={() => directionHandler("right")}>
+              right
+            </RightButton>
           </CarouselList>
           <Button variant="1">Play now</Button>
         </CarouselWrap>

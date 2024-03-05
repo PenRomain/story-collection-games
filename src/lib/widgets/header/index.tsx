@@ -51,7 +51,6 @@ const Wrap = styled(Box)`
 
 export const Header = memo(function Header() {
   const [show, setShow] = useState(false)
-  console.log("%cindex.tsx line:48 sjhw", "color: #007acc;", show)
   return (
     <Wrap fullWidth spaceBetween>
       <Image
