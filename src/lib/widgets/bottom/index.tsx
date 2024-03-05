@@ -106,7 +106,8 @@ const Wrap = styled(Box)`
   padding: 60px 44px 8px 44px;
 
   @media ${up("mobile")} {
-    padding: 170px 430px 25px 430px;
+    max-width: 1500px;
+    padding: 170px 44px 25px 44px;
   }
 `
 export const Bottom = memo(function Bottom() {

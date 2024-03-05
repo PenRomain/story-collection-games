@@ -19,18 +19,34 @@ import game5 from "@/lib/ui/assets/games/5.png"
 const games = [game1, game2, game3, game4, game5]
 const LeftButton = styled(Button)`
   position: absolute;
-  left: 0;
+  z-index: 5;
+  width: 48px;
+  height: 48px;
+  left: 24px;
+  margin-top: auto;
+  margin-bottom: auto;
+  padding: 12px;
 
   @media ${up("mobile")} {
-    // display: none;
+    display: none;
   }
 `
 const RightButton = styled(Button)`
   position: absolute;
-  right: 0;
+  z-index: 5;
+  width: 48px;
+  height: 48px;
+  right: 24px;
+  margin-top: auto;
+  margin-bottom: auto;
+  padding: 12px;
+
+  & > span > svg {
+    transform: rotateZ(180deg);
+  }
 
   @media ${up("mobile")} {
-    // display: none;
+    display: none;
   }
 `
 const CarouselList = styled.div`
@@ -326,10 +342,32 @@ export const Board = memo(function Board() {
               </li>
             ))}
             <LeftButton onClick={() => directionHandler("left")}>
-              left
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="10"
+                height="16"
+                viewBox="0 0 10 16"
+                fill="none"
+              >
+                <path
+                  d="M9.63442 0.365983C9.86876 0.600393 10.0004 0.918278 10.0004 1.24973C10.0004 1.58119 9.86876 1.89907 9.63442 2.13348L3.44692 8.32098L9.63442 14.5085C9.86212 14.7442 9.98811 15.06 9.98526 15.3877C9.98242 15.7155 9.85095 16.029 9.61919 16.2608C9.38743 16.4925 9.07392 16.624 8.74617 16.6268C8.41843 16.6297 8.10267 16.5037 7.86692 16.276L0.79567 9.20473C0.561332 8.97032 0.429687 8.65244 0.429687 8.32098C0.429687 7.98953 0.561332 7.67164 0.79567 7.43723L7.86692 0.365983C8.10133 0.131644 8.41922 9.52742e-08 8.75067 9.92267e-08C9.08213 1.03179e-07 9.40001 0.131644 9.63442 0.365983Z"
+                  fill="#A9AABF"
+                />
+              </svg>
             </LeftButton>
             <RightButton onClick={() => directionHandler("right")}>
-              right
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="10"
+                height="16"
+                viewBox="0 0 10 16"
+                fill="none"
+              >
+                <path
+                  d="M9.63442 0.365983C9.86876 0.600393 10.0004 0.918278 10.0004 1.24973C10.0004 1.58119 9.86876 1.89907 9.63442 2.13348L3.44692 8.32098L9.63442 14.5085C9.86212 14.7442 9.98811 15.06 9.98526 15.3877C9.98242 15.7155 9.85095 16.029 9.61919 16.2608C9.38743 16.4925 9.07392 16.624 8.74617 16.6268C8.41843 16.6297 8.10267 16.5037 7.86692 16.276L0.79567 9.20473C0.561332 8.97032 0.429687 8.65244 0.429687 8.32098C0.429687 7.98953 0.561332 7.67164 0.79567 7.43723L7.86692 0.365983C8.10133 0.131644 8.41922 9.52742e-08 8.75067 9.92267e-08C9.08213 1.03179e-07 9.40001 0.131644 9.63442 0.365983Z"
+                  fill="#A9AABF"
+                />
+              </svg>
             </RightButton>
           </CarouselList>
           <Button variant="1">Play now</Button>
