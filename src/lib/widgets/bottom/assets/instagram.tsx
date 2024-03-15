@@ -1,8 +1,15 @@
 export function Instagram() {
   return (
     <svg
-      width="15"
-      height="14"
+      style={{ cursor: "pointer" }}
+      onClick={() =>
+        window.open(
+          "https://www.instagram.com/sc___games?igsh=OWhpZ25icnRiZjV5",
+          "_blank",
+        )
+      }
+      width="30"
+      height="28"
       viewBox="0 0 15 14"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"

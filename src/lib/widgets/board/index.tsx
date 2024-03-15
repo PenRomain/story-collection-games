@@ -15,6 +15,7 @@ import game2 from "@/lib/ui/assets/games/2.png"
 import game3 from "@/lib/ui/assets/games/3.png"
 import game4 from "@/lib/ui/assets/games/4.png"
 import game5 from "@/lib/ui/assets/games/5.png"
+import { useRouter } from "next/navigation"
 
 const games = [game1, game2, game3, game4, game5]
 const LeftButton = styled(Button)`
@@ -178,6 +179,7 @@ const Wrap = styled(Box)`
 
 export const Board = memo(function Board() {
   const [activeIndex, setActiveIndex] = useState(-2)
+  const { push } = useRouter()
   const directionHandler = (direction: "left" | "right") => {
     direction === "left" &&
       activeIndex !== -2 &&
@@ -209,7 +211,9 @@ export const Board = memo(function Board() {
           quality, innovation and unique storytelling aimed at different target
           audiences and their needs.
         </Body>
-        <Button variant="2">Play now</Button>
+        <Button onClick={() => push("#contact")} variant="2">
+          Play now
+        </Button>
       </TextWrap>
 
       <TextWrap fullWidth column>
@@ -244,6 +248,7 @@ export const Board = memo(function Board() {
               Current project, that continues to delight our users daily.
             </Body>
             <Button
+              onClick={() => push("#contact")}
               style={{ paddingLeft: "20px", paddingRight: "20px" }}
               variant="2"
             >
@@ -370,7 +375,9 @@ export const Board = memo(function Board() {
               </svg>
             </RightButton>
           </CarouselList>
-          <Button variant="1">Play now</Button>
+          <Button onClick={() => push("#contact")} variant="1">
+            Play now
+          </Button>
         </CarouselWrap>
       </TextWrap>
     </Wrap>

@@ -2,6 +2,7 @@ import { up } from "@/lib/ui/breakpoints"
 import Button from "@/lib/ui/button"
 import { Box } from "@/lib/ui/pirimitives/box"
 import { Body, H1 } from "@/lib/ui/pirimitives/text"
+import { useRouter } from "next/navigation"
 import { memo } from "react"
 import styled from "styled-components"
 
@@ -15,6 +16,7 @@ const Wrap = styled(Box)`
   }
 `
 export const Face = memo(function Face() {
+  const { push } = useRouter()
   return (
     <Wrap gap={32} column width="40%">
       <H1 $withBorder>Story Collection Games</H1>
@@ -22,7 +24,7 @@ export const Face = memo(function Face() {
         Is an international team dedicated to creating visual novels that have
         already captured the hearts of many players.
       </Body>
-      <Button onClick={() => {}} variant="1">
+      <Button onClick={() => push("#games")} variant="1">
         Explore
       </Button>
     </Wrap>

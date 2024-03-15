@@ -104,6 +104,7 @@ const LikeHeaderBox = styled(Box)`
 `
 const Wrap = styled(Box)`
   padding: 60px 44px 8px 44px;
+  margin: auto;
 
   @media ${up("mobile")} {
     max-width: 1500px;
@@ -124,17 +125,29 @@ export const Bottom = memo(function Bottom() {
       </IconsWrap>
       <ImageBox column gap={10}>
         <Image
+          onClick={() =>
+            window.open(
+              "https://apps.apple.com/ru/app/series-%D1%81hoose-your-love-story/id1605587525?l=en-GB",
+              "_blank",
+            )
+          }
           quality={100}
           src={appStore.src}
-          width={appStore.width}
-          height={appStore.height}
+          width={appStore.width * 2}
+          height={appStore.height * 2}
           alt="appStore"
         />
         <Image
+          onClick={() =>
+            window.open(
+              "https://play.google.com/store/apps/details?id=novel.interactive.stories.life.simulator&pcampaignid=web_share",
+              "_blank",
+            )
+          }
           quality={100}
           src={googlePlay.src}
-          width={googlePlay.width}
-          height={googlePlay.height}
+          width={googlePlay.width * 2}
+          height={googlePlay.height * 2}
           alt="googlePlay"
         />
       </ImageBox>

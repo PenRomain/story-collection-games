@@ -1,8 +1,10 @@
 export function Telegram() {
   return (
     <svg
-      width="18"
-      height="14"
+      style={{ cursor: "pointer" }}
+      onClick={() => window.open("https://t.me/scgames_eng", "_blank")}
+      width="36"
+      height="28"
       viewBox="0 0 18 14"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
