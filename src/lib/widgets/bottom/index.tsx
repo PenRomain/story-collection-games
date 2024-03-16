@@ -133,8 +133,8 @@ export const Bottom = memo(function Bottom() {
           }
           quality={100}
           src={appStore.src}
-          width={appStore.width * 2}
-          height={appStore.height * 2}
+          width={appStore.width * 1.5}
+          height={appStore.height * 1.5}
           alt="appStore"
         />
         <Image
@@ -146,8 +146,8 @@ export const Bottom = memo(function Bottom() {
           }
           quality={100}
           src={googlePlay.src}
-          width={googlePlay.width * 2}
-          height={googlePlay.height * 2}
+          width={googlePlay.width * 1.5}
+          height={googlePlay.height * 1.5}
           alt="googlePlay"
         />
       </ImageBox>

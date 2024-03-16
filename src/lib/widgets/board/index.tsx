@@ -24,8 +24,7 @@ const LeftButton = styled(Button)`
   width: 48px;
   height: 48px;
   left: 24px;
-  margin-top: auto;
-  margin-bottom: auto;
+  top: 33%;
   padding: 12px;
 
   @media ${up("mobile")} {
@@ -38,8 +37,7 @@ const RightButton = styled(Button)`
   width: 48px;
   height: 48px;
   right: 24px;
-  margin-top: auto;
-  margin-bottom: auto;
+  top: 33%;
   padding: 12px;
 
   & > span > svg {
