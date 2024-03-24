@@ -32,7 +32,7 @@ const StyledBody = styled(Body)`
   }
 `
 const ImageBox = styled(Box)`
-  margin-top: 288px;
+  margin-top: 100px;
 
   & > img {
     cursor: pointer;
@@ -40,10 +40,6 @@ const ImageBox = styled(Box)`
     &:hover {
       transform: scale(1.07);
     }
-  }
-
-  @media ${up("mobile")} {
-    margin-top: 833px;
   }
 `
 const VeryBottomText = styled.p`

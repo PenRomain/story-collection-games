@@ -22,7 +22,9 @@ const Wrap = styled(Box)`
   // position: sticky;
   // top: 0;
 
-  max-width: intrinsic;
+  max-width: -webkit-fill-available;
+  max-width: -moz-available;
+  max-width: fill-available;
   margin: 30px 44px 0 44px;
 
   & > ${Box} {

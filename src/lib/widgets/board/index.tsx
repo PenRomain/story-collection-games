@@ -26,10 +26,6 @@ const LeftButton = styled(Button)`
   left: 24px;
   top: 33%;
   padding: 12px;
-
-  @media ${up("mobile")} {
-    display: none;
-  }
 `
 const RightButton = styled(Button)`
   position: absolute;
@@ -42,10 +38,6 @@ const RightButton = styled(Button)`
 
   & > span > svg {
     transform: rotateZ(180deg);
-  }
-
-  @media ${up("mobile")} {
-    display: none;
   }
 `
 const CarouselList = styled.div`
