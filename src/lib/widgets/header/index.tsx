@@ -6,16 +6,20 @@ import { styled } from "styled-components"
 import { H3 } from "@/lib/ui/pirimitives/text"
 import { up } from "@/lib/ui/breakpoints"
 
+const PointeredH3 = styled(H3)`
+  cursor: pointer;
+`
 const ShowBox = styled.div`
-position: absolute;
-width: 150px;
-height: 200px;
-right: 50px;
-top: 50px;
-gap: 12px;
+  z-index: 10;
+  position: absolute;
+  width: 150px;
+  height: 200px;
+  right: 50px;
+  top: 50px;
+  gap: 12px;
   display: flex;
   justify-contet: space-between;
-  align-items; center;
+  align-items: center;
   flex-direction: column;
 `
 const Wrap = styled(Box)`
@@ -53,6 +57,15 @@ const Wrap = styled(Box)`
 
 export const Header = memo(function Header() {
   const [show, setShow] = useState(false)
+
+  const locationHandler = (location: string) => {
+    if (location) {
+      const elem = document.getElementById(location)
+      if (elem) {
+        elem.scrollIntoView({ behavior: "smooth" })
+      }
+    }
+  }
   return (
     <Wrap fullWidth spaceBetween>
       <Image
@@ -63,26 +76,34 @@ export const Header = memo(function Header() {
         alt="logo sc-games"
       />
       <Box width="50%" spaceBetween>
-        <H3>
-          <a style={{ textDecoration: "none" }} href="#games">
-            GAMES
-          </a>
-        </H3>
-        <H3>
-          <a style={{ textDecoration: "none" }} href="#gallery">
-            GALLERY
-          </a>
-        </H3>
-        <H3>
-          <a style={{ textDecoration: "none" }} href="#contact">
-            CONTACT
-          </a>
-        </H3>
-        <H3>
-          <a style={{ textDecoration: "none" }} href="#aboutUs">
-            ABOUT US
-          </a>
-        </H3>
+        <PointeredH3
+          onClick={() => {
+            locationHandler("games")
+          }}
+        >
+          GAMES
+        </PointeredH3>
+        <PointeredH3
+          onClick={() => {
+            locationHandler("gallery")
+          }}
+        >
+          GALLERY
+        </PointeredH3>
+        <PointeredH3
+          onClick={() => {
+            locationHandler("contact")
+          }}
+        >
+          CONTACT
+        </PointeredH3>
+        <PointeredH3
+          onClick={() => {
+            locationHandler("aboutUs")
+          }}
+        >
+          ABOUT US
+        </PointeredH3>
       </Box>
       <div onClick={() => setShow(!show)}>
         <svg
@@ -111,26 +132,34 @@ export const Header = memo(function Header() {
       </div>
       {show && (
         <ShowBox>
-          <H3>
-            <a style={{ textDecoration: "none" }} href="#games">
-              GAMES
-            </a>
-          </H3>
-          <H3>
-            <a style={{ textDecoration: "none" }} href="#gallery">
-              GALLERY
-            </a>
-          </H3>
-          <H3>
-            <a style={{ textDecoration: "none" }} href="#contact">
-              CONTACT
-            </a>
-          </H3>
-          <H3>
-            <a style={{ textDecoration: "none" }} href="#aboutUs">
-              ABOUT US
-            </a>
-          </H3>
+          <PointeredH3
+            onClick={() => {
+              locationHandler("games")
+            }}
+          >
+            GAMES
+          </PointeredH3>
+          <PointeredH3
+            onClick={() => {
+              locationHandler("gallery")
+            }}
+          >
+            GALLERY
+          </PointeredH3>
+          <PointeredH3
+            onClick={() => {
+              locationHandler("contact")
+            }}
+          >
+            CONTACT
+          </PointeredH3>
+          <PointeredH3
+            onClick={() => {
+              locationHandler("aboutUs")
+            }}
+          >
+            ABOUT US
+          </PointeredH3>
         </ShowBox>
       )}
     </Wrap>
